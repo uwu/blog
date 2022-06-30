@@ -30,10 +30,15 @@
 
     // Add the IDs of extensions you want installed when the container is created in the array below.
     "extensions": [
-        "bmewburn.vscode-intelephense-client",
-        "MehediDracula.php-namespace-resolver",
-        "MS-vsliveshare.vsliveshare-pack",
-        "EditorConfig.EditorConfig",
-        "wongjn.php-sniffer"
-    ]
+		"bmewburn.vscode-intelephense-client",
+		"MehediDracula.php-namespace-resolver",
+		"MS-vsliveshare.vsliveshare-pack",
+		"EditorConfig.EditorConfig",
+		"wongjn.php-sniffer",
+		"onecentlin.laravel5-snippets",
+		"ryannaddy.laravel-artisan",
+		"amiralizadeh9480.laravel-extra-intellisense",
+		"shufo.vscode-blade-formatter",
+		"cjhowe7.laravel-blade"
+	]
 }
