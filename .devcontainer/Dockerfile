@@ -37,7 +37,9 @@ RUN apt-get update \
 
 # Install Composer from: https://hub.docker.com/_/composer
 COPY --from=composer /usr/bin/composer /usr/bin/composer
-RUN  echo 'export PATH="$PATH:$HOME/.composer/vendor/bin:/root/.composer/vendor/bin:vendor/bin"' >> /root/.bashrc
+RUN  echo 'export PATH="$PATH:$HOME/.composer/vendor/bin:/root/.composer/vendor/bin:vendor/bin"' >> /root/.bashrc && \
+     composer global require "squizlabs/php_codesniffer=*"
+
 RUN  curl -sL https://deb.nodesource.com/setup_12.x | bash -
 RUN  apt-get install -y nodejs
 RUN  apt-get install -y libzip-dev \
