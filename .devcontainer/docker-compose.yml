@@ -14,9 +14,18 @@ services:
         expose:
             # Expose mariadb port to php service (Access as hostname "mariadb" from within php container)
             - "3306"
-        # Uncomment to allow access to mariadb from external tools
-        # ports:
-        #     - "3306:3306"
+        ports:
+            - "3306:3306"
         environment:
             MYSQL_ROOT_PASSWORD: secret
             MYSQL_DATABASE: laravel
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        expose:
+            - "8080"
+        environment:
+            PMA_HOST: mariadb
+            PMA_PORT: 3306
+        restart: always
+        ports:
+            - "8080:80"
