@@ -7,7 +7,7 @@
 
     <div class="card-wrapper">
         @foreach ($posts as $post)
-            <x-post-item :title="$post->title" :author="$post->author" />
+            <x-post-item :title="$post->title" :author="$post->author" href="/posts/{{ $post->id }}" />
         @endforeach
     </div>
 </x-app-layout>

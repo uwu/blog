@@ -40,6 +40,7 @@
 		"shufo.vscode-blade-formatter",
 		"cjhowe7.laravel-blade",
 		"d9705996.tighten-lint",
-		"onecentlin.laravel-extension-pack"
+		"onecentlin.laravel-extension-pack",
+		"bradlc.vscode-tailwindcss"
 	]
 }
