@@ -42,9 +42,10 @@ RUN  echo 'export PATH="$PATH:$HOME/.composer/vendor/bin:/root/.composer/vendor/
 
 RUN  curl -sL https://deb.nodesource.com/setup_18.x | bash -
 RUN  apt-get install -y nodejs
-RUN  apt-get install -y libzip-dev \
+RUN  apt-get install -y libzip-dev libpng-dev \
      && docker-php-ext-configure zip  \
      && docker-php-ext-install zip \
+     && docker-php-ext-install gd \
      && docker-php-ext-install bcmath mysqli pdo pdo_mysql
 RUN  su $USERNAME -c "composer global require laravel/installer"
 RUN  echo "alias art='php artisan'" >> /root/.bashrc && \

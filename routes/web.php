@@ -30,6 +30,11 @@ Route::get('posts/{id}', function ($id) {
     return view('posts.view', ['post' => $post, 'author' => $author]);
 });
 
+Route::get('profile', function () {
+    return view('profile');
+})->name('profile');
+Route::post('profile', 'UserController@update_avatar');
+
 // Route::get('/', 'HomeController@index');
 
 Route::get('/dashboard', function () {
