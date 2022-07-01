@@ -39,6 +39,7 @@
 		"ryannaddy.laravel-artisan",
 		"amiralizadeh9480.laravel-extra-intellisense",
 		"shufo.vscode-blade-formatter",
-		"cjhowe7.laravel-blade"
+		"cjhowe7.laravel-blade",
+		"d9705996.tighten-lint"
 	]
 }
