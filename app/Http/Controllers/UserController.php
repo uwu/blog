@@ -9,6 +9,11 @@ use Intervention\Image\Facades\Image;
 
 class UserController extends Controller
 {
+    public function index()
+    {
+        return view('profile', ['updated' => false]);
+    }
+
     public function update_avatar(Request $request)
     {
         if ($request->hasFile('avatar')) {

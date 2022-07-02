@@ -19,23 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('posts', function () {
-    $posts = Post::all();
-    return view('posts.posts', ['posts' => $posts]);
-})->middleware(['auth'])->name('posts');
+Route::get('posts', 'PostsController@index')->middleware(['auth'])->name('posts');
+Route::get('posts/{id}', 'PostsController@viewPost');
 
-Route::get('posts/{id}', function ($id) {
-    $post = Post::where('id', $id)->first();
-    $author = User::where('name', $post->author)->first();
-    return view('posts.view', ['post' => $post, 'author' => $author]);
-});
-
-Route::get('profile', function () {
-    return view('profile', ['updated' => false]);
-})->middleware(['auth'])->name('profile');
-Route::post('profile', 'UserController@update_avatar');
-
-// Route::get('/', 'HomeController@index');
+Route::get('profile')->middleware(['auth'])->name('profile');
+Route::post('profile', 'UserController@update_avatar')->middleware(['auth']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
