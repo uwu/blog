@@ -5,9 +5,9 @@
         </h2>
     </x-slot>
 
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
         @if ($updated)
-            <div class="py-3">
+            <div class="py-3 sm:mx-0 mx-4">
                 <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md"
                     role="alert">
                     <div class="flex">
@@ -24,16 +24,16 @@
                 </div>
             </div>
         @endif
-        <div class="py-6">
-            <img class="w-36 h-36 float-left rounded-full mr-6"
+        <div class="py-6 flex flex-col sm:block">
+            <img class="w-24 h-24 mb-4 float-left self-center rounded-full sm:mr-6 sm:w-36 sm:h-36"
                 src="/storage/uploads/avatars/{{ Auth::user()->avatar }}">
 
-            <form class="flex flex-col gap-8 max-w-4xl" enctype="multipart/form-data" action="{{ route('profile') }}"
-                method="POST">
+            <form class="flex flex-col self-center items-center gap-8 max-w-4xl sm:items-stretch"
+                enctype="multipart/form-data" action="{{ route('profile') }}" method="POST">
                 @csrf
-                <div class="flex flex-col">
+                <div class="flex flex-col items-center sm:items-stretch">
                     <label>Update profile image</label>
-                    <input type="file" name="avatar">
+                    <input class="ml-20 sm:ml-0" type="file" name="avatar">
                 </div>
                 <input class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-52 py-2 px-4 rounded" type="submit"
                     value="Submit">
