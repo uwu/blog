@@ -31,8 +31,8 @@ Route::get('posts/{id}', function ($id) {
 });
 
 Route::get('profile', function () {
-    return view('profile');
-})->name('profile');
+    return view('profile', ['updated' => false]);
+})->middleware(['auth'])->name('profile');
 Route::post('profile', 'UserController@update_avatar');
 
 // Route::get('/', 'HomeController@index');

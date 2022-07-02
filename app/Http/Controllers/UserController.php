@@ -22,6 +22,6 @@ class UserController extends Controller
             $user->save();
         }
 
-        return view('profile', ['user' => Auth::user()]);
+        return view('profile', ['updated' => true]);
     }
 }
