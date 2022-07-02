@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::get('posts', 'PostsController@index')->middleware(['auth'])->name('posts');
 Route::get('posts/{id}', 'PostsController@viewPost');
 
-Route::get('profile')->middleware(['auth'])->name('profile');
+Route::get('profile', 'UserController@index')->middleware(['auth'])->name('profile');
 Route::post('profile', 'UserController@update_avatar')->middleware(['auth']);
 
 Route::get('/dashboard', function () {
