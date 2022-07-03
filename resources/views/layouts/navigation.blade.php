@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 dark:bg-gray-700 dark:border-gray-500">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -26,7 +26,7 @@
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button
-                            class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                            class="flex items-center text-sm font-medium text-gray-500 dark:text-white hover:text-gray-700 dark:hover:text-white hover:border-gray-300 focus:outline-none focus:text-gray-700 dark:focus:text-white focus:border-gray-300 transition duration-150 ease-in-out">
                             <img src="/storage/uploads/avatars/{{ Auth::user()->avatar }}"
                                 style="width: 32px; height: 32px; position: absolute; border-radius: 50%; right: 100%; margin-right: 5px;">
                             <div>{{ Auth::user()->name }}</div>
@@ -43,7 +43,8 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profile')">
+                        <x-dropdown-link
+                            :href="route('profile')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
