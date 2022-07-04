@@ -1,6 +1,6 @@
 @props(['title', 'author'])
 
-<div class="card">
+<div class="card mx-2">
     <a {{ $attributes }}>
         <div class="card-body">
             <h2 class="card-title">{{ $title }}</h2>
