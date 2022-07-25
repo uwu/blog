@@ -54,13 +54,7 @@ RUN  echo "alias art='php artisan'" >> /root/.bashrc && \
     echo "alias ls='ls -B -h --color=auto -ltr'" >> /root/.bashrc && \
     echo "alias _='sudo'" >> /root/.bashrc  && \
     echo "alias apt='sudo apt'" >> /root/.bashrc  && \
-    echo "alias apt-get='sudo apt-get'" >> /root/.bashrc && \
-    echo "alias art='php artisan'" >> /root/.zshrc && \
-    echo "alias serve='php artisan serve --port=8000 --host=0.0.0.0'" >> /root/.zshrc && \
-    echo "alias ls='ls -B -h --color=auto -ltr'" >> /root/.zshrc && \
-    echo "alias _='sudo'" >> /root/.zshrc  && \
-    echo "alias apt='sudo apt'" >> /root/.zshrc  && \
-    echo "alias apt-get='sudo apt-get'" >> /root/.zshrc
+    echo "alias apt-get='sudo apt-get'" >> /root/.bashrc
 
 # Switch back to dialog for any ad-hoc use of apt-get
 ENV DEBIAN_FRONTEND=

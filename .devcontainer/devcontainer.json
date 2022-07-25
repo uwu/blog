@@ -1,13 +1,13 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json or the definition README at
 // https://github.com/microsoft/vscode-dev-containers/tree/master/containers/php-7
 {
-    "name": "PHP 7",
+    "name": "PHP 8",
     "dockerComposeFile": "docker-compose.yml",
     "service": "php",
     // Use 'settings' to set *default* container specific settings.json values on container create.
     // You can edit these settings after create using File > Preferences > Settings > Remote.
     "settings": {
-        "terminal.integrated.shell.linux": "/bin/bash",
+        "terminal.integrated.shell.linux": "/bin/zsh",
         "phpSniffer.executablesFolder": "./vendor/bin/",
         "phpSniffer.run": "onSave"
     },
@@ -16,7 +16,7 @@
     "forwardPorts": [8000],
 
     // Uncomment the next line to run commands after the container is created.
-    "postCreateCommand": "",
+    "postCreateCommand": "echo 'alias art=\\'php artisan\\'' >> /root/.zshrc && echo 'alias serve=\\'php artisan serve --port=8000 --host=0.0.0.0\\'' >> /root/.zshrc && echo 'alias ls=\\'ls -B -h --color=auto -ltr\\'' >> /root/.zshrc && echo 'alias _=\\'sudo\\'' >> /root/.zshrc  && echo 'alias apt=\\'sudo apt\\'' >> /root/.zshrc  && echo 'alias apt-get=\\'sudo apt-get\\'' >> /root/.zshrc",
 
     // Uncomment the next line to use a non-root user. On Linux, this will prevent
     // new files getting created as root, but you may need to update the USER_UID
